@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <!--AUDIO-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!--FIM AUDIO-->
+    <title>Início</title>
+</head>
+<body>
+    <header>
+        <div class="interface">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo_raj'i.jpeg" alt="logotipo" id="raji">
+                </a>
+            </div><!--logo-->
+
+            <nav class="menu-desktop">
+                <ul>
+                    <li><a class="ativo" href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre mim</a></li>
+                    <li><a href="dicas.html">Dicas</a></li>
+                </ul>
+            </nav>
+            <!--  
+            <div class="btn-contato">
+                <a href="">
+                    <button>Contato</button>
+                </a>
+            </div>
+            -->
+        </div> <!--interface-->
+    </header>
+    <div class="interface">
+        <!--AUDIO-->
+        <audio id="myAudio" loop>
+            <source src="audios/Boombap.mp3" type="audio/mp3">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+
+        <!-- Ícone de controle de volume -->
+        <span id="muteToggle" class="mute-icon"><i class="fas fa-volume-up"></i></span>
+
+        <!-- Controle deslizante de volume -->
+        <input type="range" id="volumeControl" class="volume-control" min="0" max="1" step="0.01" value="1">
+
+        <script>
+            // Seleciona os elementos de áudio, ícone e controle de volume
+            const audio = document.getElementById('myAudio');
+            const muteToggle = document.getElementById('muteToggle');
+            const volumeControl = document.getElementById('volumeControl');
+
+            // Função para alternar entre mudo e não mudo
+            muteToggle.addEventListener('click', () => {
+                if (audio.muted) {
+                    audio.muted = false;
+                    muteToggle.innerHTML = '<i class="fas fa-volume-up"></i>'; // Ícone de volume alto
+                } else {
+                    audio.muted = true;
+                    muteToggle.innerHTML = '<i class="fas fa-volume-mute"></i>'; // Ícone de volume mudo
+                }
+            });
+
+            // Atualiza o volume do áudio quando o controle deslizante é movido
+            volumeControl.addEventListener('input', () => {
+                audio.volume = volumeControl.value;
+                if (audio.volume === "0") {
+                    audio.muted = true;
+                    muteToggle.innerHTML = '<i class="fas fa-volume-mute"></i>'; // Ícone de volume mudo
+                } else {
+                    audio.muted = false;
+                    muteToggle.innerHTML = '<i class="fas fa-volume-up"></i>'; // Ícone de volume alto
+                }
+            });
+
+            // Ajusta o volume do controle deslizante com base no volume inicial do áudio
+            volumeControl.value = audio.volume;
+
+            // Reproduz o áudio automaticamente
+            audio.play();
+        </script>
+        <!--FIM AUDIO-->
+    </div> <!--interface-->
+    <main>
+        <section class="topo-do-site">
+            <div class="interface">
+                <div class="flex">
+                    <div class="txt-topo-site">
+                        <h1>RUA ANDA JÃO<span>'</span> INTENSO</h1>
+                        <p>Salve rapa e salve massa... esse site foi criado com o propósito
+                        de divulgar a cultura do skateboard e passar um pouco da minha
+                        experiência nesse meio... mostrando um pouco dos passos iniciais.
+                        </p>
+                    </div><!--txt topo site-->
+                    <div class="img-topo-site">
+                        <img src="images/skatista1.png" id="skatista01" alt="">
+                    </div><!--img topo site-->
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--topo do site-->
+    </main>
+
+    <footer>
+        <div class="interface">
+            <div class="flex">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,288 @@
+/* ESTILO GERAL */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'street',sans-serif;
+}
+
+body{
+    background-color: #000;
+    height: 100vh;
+}
+
+.interface{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.flex{
+    display: flex;
+}
+
+/* IMAGENS */
+
+#raji{
+    width: 130px;
+    height: 90px;
+}
+#skatista01{
+    width: 400px;
+    height: 400px;
+}
+#eu{
+    width: 330px;
+    height: 400px;
+}
+.pista{
+    width: 330px;
+    height: 400px;
+    box-shadow: 5px 5px #a70000;
+}
+#bonde{
+    width: 280px;
+    height: 240px;
+}
+#bonde-pista{
+    width: 340px;
+    height: 240px;
+}
+#bonde-comida{
+    width: 300px;
+    height: 240px;
+}
+.bonde1{
+    box-shadow: 5px 5px #a70000;
+    width: 280px;
+    height: 240px;
+}
+.bonde2{
+    box-shadow: 5px 5px #a70000;
+    width: 340px;
+    height: 240px;
+}
+.bonde3{
+    box-shadow: 5px 5px #a70000;
+    width: 300px;
+    height: 240px;
+}
+/* ÁUDIO */
+.mute-icon {
+    cursor: pointer;
+    font-size: 20px; /* Tamanho do ícone */
+    margin-right: 10px;
+    color: rgb(34, 121, 252);
+}
+.volume-control {
+    width: 90px; /* Largura do controle de volume */
+    margin-left: 10px;
+}
+/* FONTE */
+
+@font-face {
+    font-family: 'street';
+    src: url(../fontes/Street\ Hipster.otf);
+}
+
+/* ESTILO CABEÇALHO */
+
+header{
+    padding: 40px 4%;
+}
+
+header > .interface{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a{
+    color: #5c5c5c;
+    text-decoration: none;
+    display: inline-block;
+    transition: .2s;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+header a:hover:not(.ativo){
+    color: rgb(34, 121, 252);
+    transform: scale(1.55);
+}
+header nav ul{
+    list-style-type: none;
+}
+
+header nav ul li{
+    display: inline-block;
+    padding: 0 48px;
+}
+/*
+header .btn-contato button{
+    padding: 10px 40px;
+    font-size: 20px;
+    font-weight: 600;
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+    letter-spacing: 1.2px;
+}
+
+header .btn-contato button:hover{
+    box-shadow: 0px 0px 8px #fff;
+}
+*/
+header nav ul li a.ativo{
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* ESTILO DO TOPO DO SITE */
+
+section.topo-do-site{
+    padding: 40px 4%;
+}
+
+section.topo-do-site .flex{
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.topo-do-site h1{
+    color: #fff;
+    font-size: 60px;
+    letter-spacing: 5px;
+}
+
+.topo-do-site h2{
+    color: #a70000;
+    font-size: 30px;
+    letter-spacing: 5px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.topo-do-site .txt-topo-site h1 span{
+    color: #a70000;
+}
+
+.topo-do-site .txt-topo-site p{
+    color: #fff;
+    letter-spacing: 1.5px;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.topo-do-site .img-topo-site img{
+    position: relative;
+    animation: flutuar 2s infinite alternate;
+}
+
+@keyframes flutuar{
+    0%{
+        top: 0;
+    }
+    100%{
+        top: 30px;
+    }
+}
+/* ESTILO RODAPÉ */
+
+footer{
+    padding: 60px 4%;
+    box-shadow: 0 0 40px 10px #fff;
+    color: #fff;
+}
+
+/* ALIADOS-BOX */
+
+section.aliados{
+    padding: 40px 4%;
+}
+
+.aliados .flex{
+    justify-content: space-around;
+}
+
+/* DICAS */
+
+.topo-do-site .txt-dicas h1{
+    color: #fff;
+    font-size: 60px;
+    letter-spacing: 5px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.topo-do-site .txt-dicas h1 span{
+    color: #a70000;
+}
+.topo-do-site .txt-dicas p{
+    color: #fff;
+    letter-spacing: 1.5px;
+    font-size: 20px;
+    text-align: justify;
+    margin: 15px 0;
+}
+.topo-do-site .txt-dicas p span{
+    color: rgb(34, 121, 252);
+}
+.container {
+    width: 80%;
+    margin: auto;
+    
+}
+
+.container ol{
+    margin: 20px 0;
+    padding: 0 20px;
+    color: #fff;
+    letter-spacing: 1.5px;
+    font-size: 20px;
+}
+.container li {
+    margin-bottom: 20px;
+}
+.container strong {
+    display: block;
+    margin-bottom: 5px;
+    color: rgb(34, 121, 252);
+}
+.container h1 {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+/* TABELA */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    letter-spacing: 1.5px;
+}
+th, td {
+    border: 1px solid #fff; /* Borda cinza escura */
+    padding: 8px;
+    text-align: center;
+}
+th {
+    background-color: #000000;
+    color: #fff; /* Fundo escuro para cabeçalhos */
+}
+tr:nth-child(even) {
+    background-color: #717171; /* Cor alternada para linhas pares */
+}
+tr:nth-child(odd) {
+    background-color: #5a5a5a; /* Cor alternada para linhas ímpares */
+}
+/* VIDEO */
+
+section.video-ollie .flex{
+    justify-content: center;
+    border-color: #fff;
+    padding: 40px 4%;
+    box-shadow: 0 0 40px 10px #fff;
+}

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <!--AUDIO-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!--FIM AUDIO-->
+    <title>Dicas</title>
+</head>
+
+<body>
+    <header>
+        <div class="interface">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo_raj'i.jpeg" alt="logotipo" id="raji">
+                </a>
+            </div><!--logo-->
+
+            <nav class="menu-desktop">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre mim</a></li>
+                    <li><a class="ativo" href="dicas.html">Dicas</a></li>
+                </ul>
+            </nav>
+        </div> <!--interface-->
+    </header>
+    <div class="interface">
+        <!--AUDIO-->
+        <audio id="myAudio" loop>
+            <source src="audios/Boombap.mp3" type="audio/mp3">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+
+        <!-- Ícone de controle de volume -->
+        <span id="muteToggle" class="mute-icon"><i class="fas fa-volume-up"></i></span>
+
+        <!-- Controle deslizante de volume -->
+        <input type="range" id="volumeControl" class="volume-control" min="0" max="1" step="0.01" value="1">
+
+        <script>
+            // Seleciona os elementos de áudio, ícone e controle de volume
+            const audio = document.getElementById('myAudio');
+            const muteToggle = document.getElementById('muteToggle');
+            const volumeControl = document.getElementById('volumeControl');
+
+            // Função para alternar entre mudo e não mudo
+            muteToggle.addEventListener('click', () => {
+                if (audio.muted) {
+                    audio.muted = false;
+                    muteToggle.innerHTML = '<i class="fas fa-volume-up"></i>'; // Ícone de volume alto
+                } else {
+                    audio.muted = true;
+                    muteToggle.innerHTML = '<i class="fas fa-volume-mute"></i>'; // Ícone de volume mudo
+                }
+            });
+
+            // Atualiza o volume do áudio quando o controle deslizante é movido
+            volumeControl.addEventListener('input', () => {
+                audio.volume = volumeControl.value;
+                if (audio.volume === "0") {
+                    audio.muted = true;
+                    muteToggle.innerHTML = '<i class="fas fa-volume-mute"></i>'; // Ícone de volume mudo
+                } else {
+                    audio.muted = false;
+                    muteToggle.innerHTML = '<i class="fas fa-volume-up"></i>'; // Ícone de volume alto
+                }
+            });
+
+            // Ajusta o volume do controle deslizante com base no volume inicial do áudio
+            volumeControl.value = audio.volume;
+
+            // Reproduz o áudio automaticamente
+            audio.play();
+        </script>
+        <!--FIM AUDIO-->
+    </div>
+
+    <main>
+        <section class="topo-do-site">
+            <div class="interface">
+                <div class="txt-dicas">
+                    <h1>Skate com <span>Confiança</span></h1>
+                    <p>Se você sempre teve vontade de andar de skate, está no lugar certo! O skate é uma atividade emocionante e 
+                        acessível que combina diversão, exercício e estilo. Seja você um novato ou alguém que deseja relembrar o 
+                        prazer de deslizar sobre o concreto, este guia é para você.</p>
+                    <p>Vamos começar sua jornada com dicas essenciais para iniciantes, incluindo como escolher o skate ideal e 
+                        aprender o básico das manobras. Com a prática e um pouco de paciência, você estará pronto para enfrentar
+                         as ruas e praças, dominando o seu skate e ganhando novas habilidades.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="topo-do-site">
+            <div class="interface">
+                <div class="txt-dicas">
+                <h1>Qual skate devo usar<span>?</span></h1>
+                <p>Escolher o skate ideal depende de alguns fatores, como seu nível de experiência, o tipo de skate que você deseja praticar, e suas preferências pessoais. 
+                    Segue ai algumas orientações detalhadas para ajudar você a escolher o skate certo:</p>
+                </div>
+                <div class="container">
+                    <ol>
+                        <li>
+                            <strong>Tipos de Skate</strong>
+                            <ol>
+                                <li>
+                                    <strong>Skate de Street (ou Skate Clássico)</strong>
+                                    <p><strong>Descrição:</strong> Skateboards mais comuns, com tamanhos variados de shape e rodas duras.</p>
+                                    <p><strong>Uso:</strong> Ideal para manobras em ambientes urbanos e em rampas pequenas.</p>
+                                    <p><strong>Características:</strong> Shape de madeira com lixa, rodas pequenas e duras, trucks de alumínio.</p>
+                                </li>
+                                <li>
+                                    <strong>Skate de Cruiser</strong>
+                                    <p><strong>Descrição:</strong> Skates projetados para transporte e passeios.</p>
+                                    <p><strong>Uso:</strong> Excelente para quem busca um skate confortável para viagens urbanas.</p>
+                                    <p><strong>Características:</strong> Shapes maiores e mais largos, rodas macias para absorver impactos.</p>
+                                </li>
+                                <li>
+                                    <strong>Skate de Longboard</strong>
+                                    <p><strong>Descrição:</strong> Skates mais longos e estáveis.</p>
+                                    <p><strong>Uso:</strong> Ideal para downhill, cruising e slides.</p>
+                                    <p><strong>Características:</strong> Shape longo e flexível, rodas grandes e macias.</p>
+                                </li>
+                                <li>
+                                    <strong>Skate de Downhill</strong>
+                                    <p><strong>Descrição:</strong> Skates projetados para descidas rápidas e estáveis.</p>
+                                    <p><strong>Uso:</strong> Para quem gosta de velocidade e controle em descidas.</p>
+                                    <p><strong>Características:</strong> Shape mais largo e robusto, rodas grandes e macias, trucks de alta qualidade.</p>
+                                </li>
+                                <li>
+                                    <strong>Skate de Freestyle</strong>
+                                    <p><strong>Descrição:</strong> Skates projetados para truques específicos e manobras.</p>
+                                    <p><strong>Uso:</strong> Ideal para realizar manobras de estilo livre.</p>
+                                    <p><strong>Características:</strong> Shape mais estreito, trucks com grande capacidade de manobra.</p>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <strong>Escolhendo o Shape</strong>
+                            <ul>
+                                <li><strong>Comprimento:</strong> Shapes menores são mais manobráveis, enquanto shapes maiores oferecem mais estabilidade.</li>
+                                <li><strong>Largura:</strong> Shapes mais largos oferecem mais espaço para os pés e estabilidade, enquanto shapes mais estreitos são melhores para manobras.</li>
+                                <li><strong>Material:</strong> A maioria dos shapes é feita de madeira de bordo (maple), que oferece boa flexibilidade e resistência.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Escolhendo os Trucks</strong>
+                            <ul>
+                                <li><strong>Tamanho:</strong> Os trucks devem corresponder à largura do shape. Trucks mais largos oferecem mais estabilidade, enquanto trucks mais estreitos são melhores para manobras.</li>
+                                <li><strong>Altura:</strong> Trucks baixos oferecem mais estabilidade para manobras, enquanto trucks altos permitem um maior ângulo de inclinação.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Escolhendo as Rodas</strong>
+                            <ul>
+                                <li><strong>Dureza:</strong> Rodas mais duras (em torno de 99A e acima) são melhores para manobras e skate em superfícies lisas. Rodas mais macias (em torno de 78A a 87A) são melhores para absorver impactos e deslizar sobre superfícies rugosas.</li>
+                                <li><strong>Tamanho:</strong> Rodas menores (cerca de 50-54mm) são melhores para manobras, enquanto rodas maiores (55mm e acima) oferecem mais estabilidade e conforto.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Escolhendo os Rolamentos</strong>
+                            <ul>
+                                <li><strong>Qualidade:</strong> Rolamentos de qualidade superior oferecem uma rotação mais suave e durabilidade.</li>
+                                <li><strong>Classificação ABEC:</strong> A classificação ABEC (Annular Bearing Engineering Committee) indica a precisão dos rolamentos. Classificações mais altas significam rolamentos mais precisos, mas não são a única medida de qualidade.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Outros Acessórios</strong>
+                            <ul>
+                                <li><strong>Lixa:</strong> Certifique-se de que o shape tenha uma boa lixa para garantir uma boa aderência.</li>
+                                <li><strong>Proteções:</strong> Não se esqueça de usar capacete, joelheiras, cotoveleiras e munhequeiras para proteção.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div><!--FIM LISTA-->
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Modalidade</th>
+                            <th>Shape (largura)</th>
+                            <th>Truck (largura)</th>
+                            <th>Rodas (diâmetro)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Street</td>
+                            <td>7.5" a 8.5"</td>
+                            <td>7.5" a 8.0"</td>
+                            <td>50 mm a 54 mm</td>
+                        </tr>
+                        <tr>
+                            <td>Park</td>
+                            <td>7.75" a 8.5"</td>
+                            <td>7.75" a 8.25"</td>
+                            <td>52 mm a 55 mm</td>
+                        </tr>
+                        <tr>
+                            <td>Vert</td>
+                            <td>8.0" a 8.5"</td>
+                            <td>8.0" a 8.5"</td>
+                            <td>54 mm a 60 mm</td>
+                        </tr>
+                        <tr>
+                            <td>Cruiser/Longboard</td>
+                            <td>8.0" a 10.0"</td>
+                            <td>8.0" a 10.0"</td>
+                            <td>55 mm a 70 mm</td>
+                        </tr>
+                        <tr>
+                            <td>Downhill</td>
+                            <td>8.0" a 10.0"</td>
+                            <td>8.0" a 10.0"</td>
+                            <td>60 mm a 75 mm</td>
+                        </tr>
+                    </tbody>
+                </table><!--FIM TABELA-->
+            </div><!--interface-->
+        </section><!--montar-->
+
+        <section class="topo-do-site">
+            <div class="interface">
+                <div class="txt-dicas">
+                <h1>Por onde começar<span>?</span></h1>
+                <p>O básico que você deve treinar pra pegar experiência com o skate é: equilíbrio, remar e parar o skate.</p>
+                <p><span>Equilíbrio:</span> Antes de mais nada, é fundamental desenvolver o equilíbrio. Pratique ficar em cima do skate, deslizando devagar e ajustando o peso para se sentir confortável em cima da prancha.</p>
+                <p><span>Remar:</span>  Aprenda a empurrar o skate para ganhar velocidade. Normalmente, você usa um pé para empurrar e o outro pé para manter o equilíbrio. Pratique deslizar em linha reta e parar com controle.</p>
+                <p><span>Parar com Segurança:</span>  Aprenda a parar o skate de maneira segura. Uma técnica comum é usar o calcanhar pra diminuir a velocidade e parar gradualmente.</p>
+                <p>A seguir, veremos um vídeo do canal do youtube <ins>sobreskate</ins> explicando uma manobra básica do skate:</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="video-ollie">
+            <div class="interface">
+                <div class="flex">
+                    <div class="video-rodape">
+                        <video controls width="949" height="534">
+                            <source src="videos/Como_mandar_ollie.mp4" type="video/mp4">
+                            O navegador não suporta video.mp4
+                        </video>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
